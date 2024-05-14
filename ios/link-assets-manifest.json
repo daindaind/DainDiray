@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/MYArirang.otf",
+      "sha1": "1a119fcf6dcd8ffd47ae916ba989d9e2be8712ff"
+    },
+    {
+      "path": "assets/fonts/MYArirang_gothic.otf",
+      "sha1": "107dfcfde1c1d747573aba7996e26a6858977c0d"
+    },
+    {
+      "path": "assets/fonts/MYHaemalgeunSangsang.otf",
+      "sha1": "ecb2336043c85fc51b7ea8fb773c5e2eaabb229d"
+    },
+    {
+      "path": "assets/fonts/MYYeongnamnu.otf",
+      "sha1": "7b31e08469c08d2fece01050e86a3ee3f451e78c"
+    }
+  ]
+}

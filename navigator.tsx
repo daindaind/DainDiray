@@ -7,9 +7,9 @@ const Tabs = createNativeStackNavigator();
 
 const Navigator = (): React.JSX.Element => {
   return (
-    <Tabs.Navigator>
+    <Tabs.Navigator screenOptions={{headerShown: false, presentation: 'modal'}}>
       <Tabs.Screen name="Home" component={Home} />
-      <Tabs.Screen name="Wirte" component={Write} />
+      <Tabs.Screen name="Write" component={Write} />
     </Tabs.Navigator>
   );
 };
