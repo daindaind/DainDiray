@@ -1,11 +1,16 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components/native';
 import theme from '../theme';
 import {Alert} from 'react-native';
+import {useDB} from '../context';
 
 const emotions = ['🥲', '🥰', '🥹', '😇', '🙂', '😞', '🧐'];
 
 const Write = (): React.JSX.Element => {
+  const realm = useDB();
+  useEffect(() => {
+    console.log(realm);
+  }, []);
   const [selectedEmotion, setSelectedEmotion] = useState('');
   const [feelings, setFeelings] = useState('');
   const onChangeText = (text: string) => setFeelings(text);
@@ -14,9 +19,18 @@ const Write = (): React.JSX.Element => {
     if (feelings === '' || selectedEmotion === '') {
       Alert.alert('', 'please complete form!');
     }
-  };
+    realm.write(() => {
+      const feeling = realm.create('Feeling', {
+        _id: Date.now(),
+        emotion: selectedEmotion,
+        message: feelings,
+      });
 
-  // console.log(selectedEmotion, feelings);
+      console.log(feeling);
+    });
+    setSelectedEmotion('');
+    setFeelings('');
+  };
 
   return (
     <View>
