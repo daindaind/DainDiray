@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components/native';
 import theme from '../theme';
 import PlusIcon from 'react-native-vector-icons/Entypo';
-import {StyleSheet, Text} from 'react-native';
 
 const Home = ({
   navigation: {navigate},
@@ -11,7 +10,7 @@ const Home = ({
 }): React.JSX.Element => {
   return (
     <View>
-      <Text style={styles.Title}>Home</Text>
+      <Title>Home</Title>
 
       <Btn onPress={() => navigate('Write')}>
         <PlusIcon name="plus" size={32} color="black" />
@@ -44,20 +43,22 @@ const Btn = styled.TouchableOpacity`
   background-color: ${theme.colors.BTN_COLOR};
 `;
 // const BtnText = styled.Text``;
-// const Title = styled.Text`
-//   margin-top: 40px;
+const Title = styled.Text`
+  margin-top: 40px;
 
-//   color: ${theme.colors.TEXT_COLOR};
-//   font-size: 50px;
-//   font-family: MYArirang;
-// `;
+  color: ${theme.colors.TEXT_COLOR};
+  font-size: 50px;
+  font-family: MYArirang;
+  font-weight: 600;
+`;
 
-const styles = StyleSheet.create({
-  Title: {
-    marginTop: 40,
+// const styles = StyleSheet.create({
+//   Title: {
+//     marginTop: 40,
 
-    color: `${theme.colors.TEXT_COLOR}`,
-    fontSize: 50,
-    fontFamily: 'MYArirang_gothic',
-  },
-});
+//     color: `${theme.colors.TEXT_COLOR}`,
+//     fontSize: 50,
+//     fontFamily: 'MYArirang_gothic',
+//     fontWeight: 600,
+//   },
+// });
